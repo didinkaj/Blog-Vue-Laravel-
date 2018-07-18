@@ -23,4 +23,6 @@
         </div>
     @endforeach
     {{ $allBlogs->links() }}
+
+   <all-guest-blog></all-guest-blog>
 @endsection

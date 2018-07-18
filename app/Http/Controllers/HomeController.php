@@ -4,6 +4,7 @@ namespace Blog\Http\Controllers;
 
 
 use Blog\Repositories\Blog\BlogRepository;
+use http\Env\Response;
 
 
 class HomeController extends Controller
@@ -31,6 +32,12 @@ class HomeController extends Controller
         $allBlogs = $this->blogRepo->getAllBlogs();
         $app = app();
         return view('welcome',compact('allBlogs','app'));
+    }
+
+    public function apiBlogs()
+    {
+        $allBlogs = $this->blogRepo->getAllBlogs();
+        return json_encode($allBlogs) ;
     }
     /**
      * Display the specified resource.
